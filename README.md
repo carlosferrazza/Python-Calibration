@@ -1,6 +1,6 @@
-# PyCalibration
+# Python-Calibration
 This repository provides a Python translation of the undistortFunctions that are part of the Scaramuzza's OCamCalib for fisheye cameras. It contains sample code for comparing this Toolbox to the builtin OpenCV fisheye library.
-This repo's objective is providing sample code for calibrating a fisheye camera with two different methods. The code regarding the OCamLib is only a translation and adaptation from C++ to Python. 
+This repo's objective is to provide sample code for calibrating a fisheye camera with two different methods. The code regarding the OCamLib is only a translation and adaptation from C++ to Python. 
 
 
 Information about the OpenCV calibration procedure for fisheye camera can be found at: http://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html
