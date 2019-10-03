@@ -18,8 +18,8 @@ import pickle
 from ocam_functions import get_ocam_model, create_perspective_undistortion_LUT
 from auxiliary_functions import undistortedStream
 
-# Change here the index that corresponds to your camera
-idx = 1
+# Change here the index that corresponds to your camera (on Windows, add 700 to use DSHOW, which is generally faster)
+idx = 0 # + 700
 
 # Change here the path of the calibration file that contains the parameters obtained through opencv_calibration.py
 PIK_opencv = "Data/opencv_calibration.dat"
@@ -41,6 +41,7 @@ with open(PIK_opencv, "rb") as f:
     
 o = get_ocam_model(path_ocam)
 mapx_persp, mapy_persp = create_perspective_undistortion_LUT(o, sf)
+
 mapx_persp_32 = mapx_persp.astype('float32')
 mapy_persp_32 = mapy_persp.astype('float32')
 

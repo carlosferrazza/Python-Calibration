@@ -76,9 +76,9 @@ def world2cam(point3D, o):
     point2D = []    
     
     norm = np.linalg.norm(point3D[:2])
-    theta = np.arctan(point3D[2]/norm)
 
     if norm != 0:
+        theta = np.arctan(point3D[2]/norm)
         invnorm = 1.0/norm
         t = theta
         rho = o['invpol'][0]

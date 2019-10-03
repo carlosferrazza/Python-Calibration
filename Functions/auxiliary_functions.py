@@ -22,14 +22,12 @@ def undistortedStream(idx, mtx, dist, mapx_persp_32, mapy_persp_32):
 
     newcameramtx, roi=cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),1)
 
-
     while(True):
         # Capture frame-by-frame
         ret, frame = cap.read()
     
         # Our operations on the frame come here
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
         
         # undistort
         dst = cv2.fisheye.undistortImage(gray, mtx, dist, None, newcameramtx)
@@ -73,7 +71,7 @@ def acquireImages(idx):
     
         if q & 0xFF == ord('t'):
             images.append(gray)
-            print "Images acquired: ", count
+            print("Images acquired: ", count)
             sys.stdout.flush()
             count+=1
         elif q & 0xFF == ord('q'):
